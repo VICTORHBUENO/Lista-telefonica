@@ -1,0 +1,29 @@
+POST http://localhost:3333/telefone
+Content-Type: application/json
+{
+      "Nome":"Ana Silva",
+      "Número": "(11) 98765-4321",
+       "CPF": "123.456.789-00",
+}
+###
+
+GET http://localhost:3333/Telefone
+
+###
+
+GET http://localhost:3333/Telefone?search=IFMS
+
+###
+
+PUT http://localhost:3333/telefone/aceb8817-5755-4d12-aebd-532847f7db54
+Content-Type: application/json
+
+{
+    "nome": "LISTA TELEFONICA ",
+    "Número": "9965-4452",
+    
+}
+
+###
+
+DELETE http://localhost:3333/telefone/aceb8817-5755-4d12-aebd-532847f7db54
