@@ -2,13 +2,13 @@ import { randomUUID } from "crypto"
 
 
 export class DatabaseMemory{
-    #TELEFONE = new Map()
+    #registro = new Map()
 
 list(search){
-    return Array.from(this.#TELEFONE.entries()).map((TELEFONEArray) => {
-        const id = TELEFONEArray[0]
+    return Array.from(this.#registro.entries()).map((registroArray) => {
+        const id = registroArray[0]
 
-        const data = TELEFONEArray[1]
+        const data = registroArray[1]
 
         return{
             id,
@@ -26,14 +26,14 @@ list(search){
 
     create(telefone){
         const telefoneid = randomUUID()
-        this.#TELEFONE.set(telefoneid, telefone)
+        this.#registro.set(telefoneid, telefone)
     }
     
     update(id, telefone){
-        this.#TELEFONE.set(id,telefone)
+        this.#registro.set(id,telefone)
     }
 
     delete(id, telefone){
-        this.#TELEFONE.delete(id, telefone)
+        this.#registro.delete(id, telefone)
     }
 }

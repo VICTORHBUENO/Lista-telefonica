@@ -11,11 +11,11 @@ server.get('/', () => {
 server.post('/telefone', (request, reply) => {
     //const body = request.body//
    //console.log(body)//
-   const {Nome, Número,  CPF } = request.body
+   const {Nome: hora, Número,duraçao } = request.body
     database.create({
-        Nome: Nome,
         Número: Número,
-        CPF: CPF
+        hora: hora,
+        duraçao: duraçao,
     })
     console.log(database.list())
     return reply.status(201).send()

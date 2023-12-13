@@ -1,17 +1,17 @@
 POST http://localhost:3333/telefone
 Content-Type: application/json
 {
-      "Nome":"Ana Silva",
-      "Número": "(11) 98765-4321",
-       "CPF": "123.456.789-00",
+      "Número" :"9964-4446",
+      "hora" : "16:44" ,
+      "duraçao" : "4:00 minutos",
 }
 ###
 
-GET http://localhost:3333/Telefone
+GET http://localhost:3333/registro
 
 ###
 
-GET http://localhost:3333/Telefone?search=IFMS
+GET http://localhost:3333/registro?search=IFMS
 
 ###
 
