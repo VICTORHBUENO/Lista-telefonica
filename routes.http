@@ -1,29 +1,31 @@
-POST http://localhost:3333/telefone
+POST http://localhost:3333/registro
 Content-Type: application/json
+
 {
-      "Número" :"9964-4446",
-      "hora" : "16:44" ,
-      "duraçao" : "4:00 minutos",
+    "contato": "Pai",
+    "horario": "16h",
+    "duracao": "10min"
 }
+
 ###
 
 GET http://localhost:3333/registro
 
 ###
 
-GET http://localhost:3333/registro?search=IFMS
+GET http://localhost:3333/registro?search=Pai
 
 ###
 
-PUT http://localhost:3333/telefone/aceb8817-5755-4d12-aebd-532847f7db54
+PUT http://localhost:3333/registro/6044ec6f-31e0-4b21-b3fc-95bcb16fd316
 Content-Type: application/json
 
 {
-    "nome": "LISTA TELEFONICA ",
-    "Número": "9965-4452",
-    
+    "contato": "Mãe",
+    "horario": "17h",
+    "duracao": "20min"
 }
 
 ###
 
-DELETE http://localhost:3333/telefone/aceb8817-5755-4d12-aebd-532847f7db54
+DELETE http://localhost:3333/registro/03afebb2-2078-45f5-8898-84c615a7c437

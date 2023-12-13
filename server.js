@@ -8,45 +8,43 @@ server.get('/', () => {
     return 'Olá Mundo'
 })
 
-server.post('/telefone', (request, reply) => {
+server.post('/registro', (request, reply) => {
     //const body = request.body//
    //console.log(body)//
-   const {Nome: hora, Número,duraçao } = request.body
+   const {contato, horario, duracao } = request.body
     database.create({
-        Número: Número,
-        hora: hora,
-        duraçao: duraçao,
+        contato: contato,
+        horario: horario,
+        duracao: duracao
     })
     console.log(database.list())
     return reply.status(201).send()
 })
 
-server.get('/telefone', (request) => {
+server.get('/registro', (request) => {
     const search = request.query.search
 
-    console.log(search)
-    
-    const telefone = database.list(search)
-   
-    return telefone
+    const registros = database.list(search)
+
+    return registros
 })
 
-server.put('/telefone/:id', (request, reply) => {
+server.put('/registro/:id', (request, reply) => {
 
-    const telefoneid = request.params.id
-    const { Nome,Número} = request.body
-    const telefone = database.update(telefoneid, {
-        Nome: Nome,
-        Número: Número,
-
+    const registroId = request.params.id
+    const {contato, horario, duracao} = request.body
+    const registro = database.update(registroId, {
+        contato,
+        horario,
+        duracao,
     })
     return reply.status(204).send()
 })
 
-server.delete('/telefone/:id', (request, reply) => {
-    const telefoneid = request.params.id
+server.delete('/registro/:id', (request, reply) => {
+    const registroId = request.params.id
 
-    database.delete(telefoneId)
+    database.delete(registroId)
 
     return reply.status(204).send()
 })
